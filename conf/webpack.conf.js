@@ -9,35 +9,12 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   module: {
     loaders: [
-      {
-        test: /.json$/,
-        loaders: [
-          'json-loader'
-        ]
-      },
-      {
-        test: /.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        enforce: 'pre'
-      },
-      {
-        test: /\.(css|scss)$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [
-          'react-hot-loader',
-          'babel-loader'
-        ]
-      }
+      {test: /.json$/, loaders: ['json-loader']},
+      {test: /.js$/, exclude: /node_modules/, loaders: ['eslint-loader'], enforce: 'pre'},
+      {test: /\.(css|scss)$/, loaders: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']},
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot-loader', 'babel-loader']},
+      {test: /.html$/, loader: 'html-loader'},
+      {test: /\.(svg|png|jpg)$/, loader: 'url-loader?limit=8192'}
     ]
   },
   plugins: [

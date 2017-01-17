@@ -5,6 +5,7 @@ import {Router, Route, browserHistory} from 'react-router';
 import {Hello} from './app/hello';
 
 import './index.scss';
+import './aya';
 
 ReactDOM.render(
   <Router history={browserHistory}>
